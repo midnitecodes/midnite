@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midnite Auto – The 24/7 Brotherhood</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="" aria-hidden="true">
+      <source src="hero_loop.mp4" type="video/mp4">
+      <!-- fallback: background will remain radial gradient if video unavailable -->
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-content reveal">
+        <h2>The 24/7 Car Meet</h2>
+        <p class="subhead delay1">The roads don’t sleep — neither do we. Midnite Auto is the global garage for those who live cars, culture, and connection.</p>
+
+        <div style="display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;" class="delay2">
+          <a href="#" class="btn btn-large open-modal">Join the Family</a>
+          <a href="app.html" class="btn-outline">Explore the App</a>
+        </div>
+
+        <p class="microcopy delay3">⚡ Limited beta spots remaining — claim your OG badge.</p>
+      </div>
+    </div>
+
+    <div class="hero-bubbles" aria-hidden="true">
+      <span class="bubble" style="width:220px;height:220px;left:-40px;top:10%;animation-duration:9s;"></span>
+      <span class="bubble" style="width:140px;height:140px;right:8%;top:28%;animation-duration:11s;"></span>
+      <span class="bubble" style="width:90px;height:90px;left:18%;bottom:14%;animation-duration:7s;"></span>
+    </div>
+  </section>
+
+  <section class="feature container reveal">
+    <h3>What members get</h3>
+    <p>We designed Midnite for the people who actually build and fix cars — not just flex. Early members get:</p>
+    <ul style="text-align:left;max-width:900px;margin:1rem auto 0;">
+      <li><strong>Priority beta access</strong> to Garage Logs, Marketplace, and Event tools.</li>
+      <li><strong>OG badge</strong> and early reputation inside the community.</li>
+      <li><strong>Direct feedback loop</strong> — you tell us what matters, we build it.</li>
+      <li><strong>Exclusive community events</strong> and charity drives.</li>
+    </ul>
+  </section>
+
+  <section class="feature container reveal">
+    <h3>What people are saying</h3>
+    <div class="cards" style="grid-template-columns: repeat(2, 1fr);">
+      <article class="card">
+        <h4>"Finally a place that understands builds"</h4>
+        <p>— "Midnite helped me find a donor motor and a legit seller in under a week. No scams, just real help."</p>
+      </article>
+      <article class="card">
+        <h4>"Organized meets without the spam"</h4>
+        <p>— "We ran our first charity cruise using Midnite RSVPs. Everything from signups to check-in was smooth."</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="feature container reveal">
+    <h3>More Than a Community — It’s a Movement</h3>
+    <p>Midnite connects enthusiasts, engineers, and dreamers from every corner of the globe. Share builds, drop meet spots, trade parts, and fund good causes — all in one ecosystem.</p>
+
+    <div class="cards">
+      <article class="card">
+        <div>
+          <h4>Community</h4>
+          <p>Find local crews, share your progress, and earn reputation inside a platform built for builders.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h4>Events & Meets</h4>
+          <p>Host and discover late-night meets, charity drives, and private builds. RSVP and lock seats instantly.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h4>Events & Meets</h4>
+          <p>Host and discover late-night meets, charity drives, and private builds. RSVP and lock seats instantly.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h4>Marketplace</h4>
+          <p>Trusted private listings for parts, swaps, and bespoke services from the community.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="feature container reveal">
+    <h3>Faith • Speed • Brotherhood</h3>
+    <p>Built by believers who see purpose in performance. Whether you’re wrenching at 3 a.m. or rolling into Jummah in your build, Midnite is your home on and off the streets.</p>
+  </section>
+
+  <section class="cta reveal container">
+    <h3>Join Before Launch — Be Part of Day One</h3>
+    <a href="#" class="btn-large open-modal">Get Early Access</a>
+  </section>
+
+  <!-- Email capture modal (Netlify-ready) -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close" id="modal-close" aria-label="Close">✕</button>
+  <h3 id="modal-title">Get Early Access — Join the Family</h3>
+  <p>We’re opening limited beta spots. Tell us where you want to be and we’ll get you in.</p>
+
+      <form name="early-access" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="early-access">
+        <label>
+          Full name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          Email address
+          <input type="email" name="email" placeholder="you@yourmail.com" required>
+        </label>
+        <label>
+          Where do you want to be?
+          <select name="goal" required>
+            <option value="just-looking">Just exploring / browsing</option>
+            <option value="build-community">Build community & host meets</option>
+            <option value="sell-parts">Buy / sell trusted parts</option>
+            <option value="learn-maintenance">Learn maintenance and grow skills</option>
+            <option value="other">Other (tell us in message)</option>
+          </select>
+        </label>
+        <label>
+          Message (optional)
+          <input type="text" name="message" placeholder="Tell us a bit — what’s your main challenge?">
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Join Beta</button>
+        </div>
+      </form>
+
+      <div class="form-success" id="form-success">Thanks — we’ll be in touch. Check your email for next steps.</div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

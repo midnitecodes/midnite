@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Family – Midnite Auto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="page reveal container">
+    <h2>Join the Family</h2>
+
+    <p>
+      This isn’t just another car app — it’s a family built from late-night meets, hard lessons,
+      and people who actually help each other finish builds. When you join Midnite, you join
+      folks who trade parts, time, and knowledge — not clout.
+    </p>
+
+    <p>
+      The beta is limited to a focused crew so we can build features that matter. Below you’ll
+      find the fastest way to join the beta, what to expect, and the benefits for early members.
+    </p>
+
+    <h3>How to enter the beta</h3>
+    <ol>
+      <li>Fill the form below (name, email, and where you want to be).</li>
+      <li>Confirm your email from the message we send you.</li>
+      <li>We’ll invite you to the private beta and the Discord cohort — expect an invite within 3–7 days.</li>
+    </ol>
+
+    <h3>Why join early?</h3>
+    <ul>
+      <li>Priority access to features like Garage Logs and Marketplace.</li>
+      <li>OG badge and recognition inside the community.</li>
+      <li>Direct influence on product decisions — tell us what you need.</li>
+    </ul>
+
+    <h3>Join now</h3>
+    <p>Fill this short form and we’ll follow up with next steps.</p>
+
+    <!-- Inline Netlify form (duplicate of modal form) -->
+    <form name="early-access" method="POST" data-netlify="true" class="reveal delay1">
+      <input type="hidden" name="form-name" value="early-access">
+      <label>
+        Full name
+        <input type="text" name="name" placeholder="What should we call you?" required>
+      </label>
+      <label>
+        Email address
+        <input type="email" name="email" placeholder="Where should we send your invite?" required>
+      </label>
+      <label>
+        Where do you want to be?
+        <select name="goal" required>
+          <option value="" disabled selected>Select your main goal...</option>
+          <option value="build-community">Build community & host meets</option>
+          <option value="sell-parts">Buy / sell trusted parts</option>
+          <option value="learn-maintenance">Learn maintenance and grow skills</option>
+          <option value="just-looking">Just exploring / browsing</option>
+          <option value="other">Other (tell us in message)</option>
+        </select>
+      </label>
+      <label>
+        Message (optional)
+        <input type="text" name="message" placeholder="Tell us your story — what brought you here?">
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn">Request Beta Invite</button>
+      </div>
+    </form>
+
+    <div class="form-success" id="form-success">Thanks — we’ll be in touch. Check your email for next steps.</div>
+
+    <div class="socials" style="margin-top:1.4rem;">
+      <a href="https://discord.gg/GQhDqdj4GQ" target="_blank">Join Discord</a>
+      <a href="https://www.instagram.com/midnite.auto" target="_blank">Follow on Instagram</a>
+      <a href="https://www.tiktok.com/@midnite.auto" target="_blank">Follow on TikTok</a>
+    </div>
+
+    <div class="buttons" style="margin-top:2rem;">
+      <a href="index.html" class="btn-outline">Back Home</a>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
