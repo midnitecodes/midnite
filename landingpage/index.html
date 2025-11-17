@@ -5,10 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Midnite Auto – The 24/7 Brotherhood</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="hero">
+  <!-- Racing-themed background elements -->
+  <div class="racing-bg">
+    <div class="speed-lines">
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+    </div>
+    <div class="checkered-pattern"></div>
+    <div class="racing-grid"></div>
+  </div>
+
+  <section class="hero racing-hero">
     <video class="hero-video" autoplay muted loop playsinline poster="" aria-hidden="true">
       <source src="hero_loop.mp4" type="video/mp4">
       <!-- fallback: background will remain radial gradient if video unavailable -->
@@ -17,12 +29,20 @@
 
     <div class="container">
       <div class="hero-content reveal">
-        <h2>The 24/7 Car Meet</h2>
-        <p class="subhead delay1">The roads don’t sleep — neither do we. Midnite Auto is the global garage for those who live cars, culture, and connection.</p>
+        <div class="hero-racing-stripe"></div>
+        <h2 class="racing-hero-title">The 24/7 Car Meet</h2>
+        <div class="hero-racing-stripe"></div>
+        <p class="subhead delay1">The roads don't sleep — neither do we. Midnite Auto is the global garage for those who live cars, culture, and connection.</p>
 
-        <div style="display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;" class="delay2">
-          <a href="#" class="btn btn-large open-modal">Join the Family</a>
-          <a href="app.html" class="btn-outline">Explore the App</a>
+        <div class="hero-buttons delay2">
+          <a href="#" class="btn btn-large racing-btn open-modal">
+            <span>Join the Family</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="app.html" class="btn-outline racing-btn-outline">
+            <span>Explore the App</span>
+            <span class="btn-arrow">→</span>
+          </a>
         </div>
 
         <p class="microcopy delay3">⚡ Limited beta spots remaining — claim your OG badge.</p>
@@ -36,79 +56,142 @@
     </div>
   </section>
 
-  <section class="feature container reveal">
-    <h3>What members get</h3>
+  <section class="feature container reveal racing-section">
+    <div class="racing-header">
+      <div class="racing-stripe"></div>
+      <h3 class="racing-title">
+        <span class="title-number">01</span>
+        <span class="title-text">What Members Get</span>
+      </h3>
+      <div class="racing-stripe"></div>
+    </div>
     <p>We designed Midnite for the people who actually build and fix cars — not just flex. Early members get:</p>
-    <ul style="text-align:left;max-width:900px;margin:1rem auto 0;">
-      <li><strong>Priority beta access</strong> to Garage Logs, Marketplace, and Event tools.</li>
-      <li><strong>OG badge</strong> and early reputation inside the community.</li>
-      <li><strong>Direct feedback loop</strong> — you tell us what matters, we build it.</li>
-      <li><strong>Exclusive community events</strong> and charity drives.</li>
-    </ul>
+    <div class="racing-benefits">
+      <div class="benefit-item">
+        <div class="benefit-icon">🚀</div>
+        <div class="benefit-content">
+          <strong>Priority beta access</strong> to Garage Logs, Marketplace, and Event tools.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🏆</div>
+        <div class="benefit-content">
+          <strong>OG badge</strong> and early reputation inside the community.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💬</div>
+        <div class="benefit-content">
+          <strong>Direct feedback loop</strong> — you tell us what matters, we build it.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🎉</div>
+        <div class="benefit-content">
+          <strong>Exclusive community events</strong> and charity drives.
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="feature container reveal">
-    <h3>What people are saying</h3>
-    <div class="cards" style="grid-template-columns: repeat(2, 1fr);">
-      <article class="card">
+  <section class="feature container reveal racing-section">
+    <div class="racing-header">
+      <div class="racing-stripe"></div>
+      <h3 class="racing-title">
+        <span class="title-number">02</span>
+        <span class="title-text">What People Are Saying</span>
+      </h3>
+      <div class="racing-stripe"></div>
+    </div>
+    <div class="racing-cards-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <article class="racing-card">
+        <div class="card-icon">💬</div>
         <h4>"Finally a place that understands builds"</h4>
         <p>— "Midnite helped me find a donor motor and a legit seller in under a week. No scams, just real help."</p>
       </article>
-      <article class="card">
+      <article class="racing-card">
+        <div class="card-icon">✅</div>
         <h4>"Organized meets without the spam"</h4>
         <p>— "We ran our first charity cruise using Midnite RSVPs. Everything from signups to check-in was smooth."</p>
       </article>
     </div>
   </section>
 
-  <section class="feature container reveal">
-    <h3>More Than a Community — It’s a Movement</h3>
+  <section class="feature container reveal racing-section">
+    <div class="racing-header">
+      <div class="racing-stripe"></div>
+      <h3 class="racing-title">
+        <span class="title-number">03</span>
+        <span class="title-text">More Than a Community — It's a Movement</span>
+      </h3>
+      <div class="racing-stripe"></div>
+    </div>
     <p>Midnite connects enthusiasts, engineers, and dreamers from every corner of the globe. Share builds, drop meet spots, trade parts, and fund good causes — all in one ecosystem.</p>
 
-    <div class="cards">
-      <article class="card">
-        <div>
-          <h4>Community</h4>
-          <p>Find local crews, share your progress, and earn reputation inside a platform built for builders.</p>
-        </div>
+    <div class="racing-cards-grid">
+      <article class="racing-card">
+        <div class="card-icon">👥</div>
+        <h4>Community</h4>
+        <p>Find local crews, share your progress, and earn reputation inside a platform built for builders.</p>
       </article>
-      <article class="card">
-        <div>
-          <h4>Events & Meets</h4>
-          <p>Host and discover late-night meets, charity drives, and private builds. RSVP and lock seats instantly.</p>
-        </div>
+      <article class="racing-card">
+        <div class="card-icon">📅</div>
+        <h4>Events & Meets</h4>
+        <p>Host and discover late-night meets, charity drives, and private builds. RSVP and lock seats instantly.</p>
       </article>
-      <article class="card">
-        <div>
-          <h4>Events & Meets</h4>
-          <p>Host and discover late-night meets, charity drives, and private builds. RSVP and lock seats instantly.</p>
-        </div>
+      <article class="racing-card highlight-card">
+        <div class="card-icon">🛠️</div>
+        <h4>Garage Logs</h4>
+        <p>Track every repair, upgrade, and modification. Document your build journey with photos, costs, and receipts.</p>
       </article>
-      <article class="card">
-        <div>
-          <h4>Marketplace</h4>
-          <p>Trusted private listings for parts, swaps, and bespoke services from the community.</p>
-        </div>
+      <article class="racing-card">
+        <div class="card-icon">🛒</div>
+        <h4>Marketplace</h4>
+        <p>Trusted private listings for parts, swaps, and bespoke services from the community.</p>
       </article>
     </div>
   </section>
 
-  <section class="feature container reveal">
-    <h3>Faith • Speed • Brotherhood</h3>
-    <p>Built by believers who see purpose in performance. Whether you’re wrenching at 3 a.m. or rolling into Jummah in your build, Midnite is your home on and off the streets.</p>
+  <section class="feature container reveal racing-section">
+    <div class="racing-header">
+      <div class="racing-stripe"></div>
+      <h3 class="racing-title">
+        <span class="title-number">04</span>
+        <span class="title-text">Faith • Speed • Brotherhood</span>
+      </h3>
+      <div class="racing-stripe"></div>
+    </div>
+    <p>Built by believers who see purpose in performance. Whether you're wrenching at 3 a.m. or rolling into Jummah in your build, Midnite is your home on and off the streets.</p>
   </section>
 
-  <section class="cta reveal container">
-    <h3>Join Before Launch — Be Part of Day One</h3>
-    <a href="#" class="btn-large open-modal">Get Early Access</a>
+  <section class="cta reveal container racing-cta">
+    <div class="racing-header">
+      <div class="racing-stripe"></div>
+      <h3 class="racing-title">
+        <span class="title-number">05</span>
+        <span class="title-text">Join Before Launch — Be Part of Day One</span>
+      </h3>
+      <div class="racing-stripe"></div>
+    </div>
+    <a href="#" class="btn-large racing-btn open-modal">
+      <span>Get Early Access</span>
+      <span class="btn-arrow">→</span>
+    </a>
   </section>
 
   <!-- Email capture modal (Netlify-ready) -->
   <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal racing-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="close" id="modal-close" aria-label="Close">✕</button>
-  <h3 id="modal-title">Get Early Access — Join the Family</h3>
-  <p>We’re opening limited beta spots. Tell us where you want to be and we’ll get you in.</p>
+      <div class="modal-racing-header">
+        <div class="racing-stripe"></div>
+        <h3 id="modal-title" class="racing-title">
+          <span class="title-number">BETA</span>
+          <span class="title-text">Get Early Access — Join the Family</span>
+        </h3>
+        <div class="racing-stripe"></div>
+      </div>
+      <p>We're opening limited beta spots. Tell us where you want to be and we'll get you in.</p>
 
       <form name="early-access" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="early-access">

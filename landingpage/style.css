@@ -80,6 +80,7 @@ nav a:hover, .highlight { color:var(--accent); }
 }
 .hero .container, .hero .hero-content { position: relative; z-index: 2; }
 .hero h2 { font-family:'Orbitron',sans-serif; font-size:3rem; color:var(--accent); margin-bottom:1rem; letter-spacing:0.6px; font-weight:600; }
+.hero .racing-hero-title { font-family:'Orbitron',sans-serif; font-size:3.5rem; font-weight:900; color:var(--accent); text-transform:uppercase; letter-spacing:3px; margin:1rem 0; text-shadow:0 0 30px rgba(110,15,18,0.5); }
 .hero p { max-width: 640px; margin: 0 auto 1.2rem; color:#ddd; }
 .hero .subhead { color:#e6e6e6; margin-bottom:1.2rem; }
 
@@ -240,6 +241,839 @@ ul.app-features li::before { content:"•"; color:var(--blood); position:absolut
 .reveal { opacity:0; transform:translateY(20px); transition: all 0.8s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 .delay1 { transition-delay:0.2s; } .delay2 { transition-delay:0.4s; } .delay3 { transition-delay:0.6s; }
+
+/* ---------------------- Racing Theme Styles ---------------------- */
+.racing-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Speed lines animation */
+.speed-lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+}
+
+.speed-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  animation: speedLine 3s linear infinite;
+}
+
+.speed-line:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 2.5s;
+}
+
+.speed-line:nth-child(2) {
+  left: 30%;
+  animation-delay: 0.5s;
+  animation-duration: 3s;
+}
+
+.speed-line:nth-child(3) {
+  left: 60%;
+  animation-delay: 1s;
+  animation-duration: 2.8s;
+}
+
+.speed-line:nth-child(4) {
+  left: 85%;
+  animation-delay: 1.5s;
+  animation-duration: 3.2s;
+}
+
+@keyframes speedLine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Checkered pattern */
+.checkered-pattern {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background-image: 
+    linear-gradient(45deg, rgba(110,15,18,0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(110,15,18,0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(110,15,18,0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(110,15,18,0.1) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  opacity: 0.3;
+  mask: linear-gradient(to top, black 0%, transparent 100%);
+}
+
+/* Racing grid */
+.racing-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(110,15,18,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110,15,18,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.4;
+}
+
+/* Racing page container */
+.racing-page {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+}
+
+/* Racing header */
+.racing-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.racing-stripe {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  position: relative;
+}
+
+.racing-stripe::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.racing-stripe::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.racing-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.title-number {
+  font-size: 1.8rem;
+  font-weight: 900;
+  opacity: 0.6;
+  color: rgba(110,15,18,0.5);
+}
+
+.title-text {
+  position: relative;
+}
+
+.title-text::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  animation: titleUnderline 2s ease-in-out infinite;
+}
+
+@keyframes titleUnderline {
+  0%, 100% { width: 100%; }
+  50% { width: 60%; }
+}
+
+/* Content wrapper */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Racing cards */
+.racing-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(11,11,11,0.9));
+  border: 1px solid rgba(110,15,18,0.2);
+  border-left: 4px solid var(--accent);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.racing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.racing-card:hover {
+  transform: translateX(8px);
+  border-left-color: var(--accent);
+  box-shadow: -8px 0 30px rgba(110,15,18,0.3);
+}
+
+.racing-card:hover::before {
+  opacity: 1;
+}
+
+.racing-card p {
+  color: #ddd;
+  line-height: 1.8;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.card-year {
+  position: absolute;
+  top: -12px;
+  left: 2rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(110,15,18,0.4);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  filter: drop-shadow(0 0 10px rgba(110,15,18,0.5));
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, rgba(110,15,18,0.15), rgba(20,20,20,0.9));
+  border-left-width: 4px;
+  border-left-color: var(--accent);
+}
+
+.highlight-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(110,15,18,0.2), transparent);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.racing-highlight {
+  color: var(--accent);
+  font-weight: 600;
+  text-shadow: 0 0 20px rgba(110,15,18,0.5);
+  position: relative;
+}
+
+.racing-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+/* Racing buttons */
+.racing-buttons {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.racing-btn, .racing-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.racing-btn .btn-arrow, .racing-btn-outline .btn-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.racing-btn:hover .btn-arrow, .racing-btn-outline:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.racing-btn::before, .racing-btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.racing-btn:hover::before, .racing-btn-outline:hover::before {
+  left: 100%;
+}
+
+/* Racing intro text */
+.racing-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.racing-intro p {
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Racing cards grid */
+.racing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.racing-cards-grid .racing-card h4 {
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.racing-cards-grid .racing-card p {
+  margin: 0;
+}
+
+/* Racing badge */
+.racing-badge {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(110,15,18,0.1), rgba(20,20,20,0.5));
+  border: 1px solid rgba(110,15,18,0.3);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.racing-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(110,15,18,0.2), transparent);
+  animation: badgeShine 3s ease-in-out infinite;
+}
+
+@keyframes badgeShine {
+  0%, 100% { left: -100%; }
+  50% { left: 100%; }
+}
+
+.racing-badge p {
+  margin: 0;
+  color: #ccc;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+/* Racing features section */
+.racing-features {
+  margin: 4rem 0;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(110,15,18,0.2);
+}
+
+.racing-features .racing-header {
+  margin-bottom: 2rem;
+}
+
+.racing-features h3.racing-title {
+  font-size: 2.2rem;
+}
+
+.features-intro {
+  text-align: center;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Feature list */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(20,20,20,0.6), rgba(11,11,11,0.8));
+  border: 1px solid rgba(110,15,18,0.2);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(8px);
+  box-shadow: -8px 0 30px rgba(110,15,18,0.3);
+  border-left-color: var(--accent);
+}
+
+.feature-item:hover::before {
+  transform: scaleY(1);
+}
+
+.feature-number {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent), #4f0b0c);
+  color: #fff;
+  border-radius: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 20px rgba(110,15,18,0.4);
+  position: relative;
+}
+
+.feature-number::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), #4f0b0c);
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0.6;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-content h4 {
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0 0 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feature-content p {
+  color: #ddd;
+  line-height: 1.8;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* Responsive adjustments for racing theme */
+@media (max-width: 768px) {
+  .racing-title {
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .title-number {
+    font-size: 1.4rem;
+  }
+  
+  .racing-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .racing-stripe {
+    width: 60%;
+  }
+  
+  .racing-card {
+    padding: 1.5rem;
+  }
+  
+  .racing-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .racing-btn, .racing-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .racing-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-item {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .feature-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .racing-features h3.racing-title {
+    font-size: 1.8rem;
+  }
+  
+  .racing-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .racing-benefits {
+    gap: 1rem;
+  }
+  
+  .benefit-item {
+    padding: 1.2rem;
+  }
+}
+
+/* Racing hero section */
+.racing-hero {
+  position: relative;
+}
+
+.hero-racing-stripe {
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 1rem auto;
+  position: relative;
+}
+
+.hero-racing-stripe::before,
+.hero-racing-stripe::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.hero-racing-stripe::before {
+  left: 0;
+}
+
+.hero-racing-stripe::after {
+  right: 0;
+}
+
+.racing-hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 1rem 0;
+  text-shadow: 0 0 30px rgba(110,15,18,0.5);
+  position: relative;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Racing sections */
+.racing-section {
+  margin: 4rem auto;
+  padding: 2rem 0;
+}
+
+.racing-cta {
+  margin: 4rem auto;
+  padding: 3rem 0;
+}
+
+/* Racing benefits */
+.racing-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(20,20,20,0.6), rgba(11,11,11,0.8));
+  border: 1px solid rgba(110,15,18,0.2);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateX(8px);
+  box-shadow: -8px 0 30px rgba(110,15,18,0.3);
+  border-left-color: var(--accent);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(110,15,18,0.5));
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+.benefit-content {
+  flex: 1;
+  color: #ddd;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.benefit-content strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Racing form */
+.racing-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(11,11,11,0.9));
+  border: 1px solid rgba(110,15,18,0.3);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.racing-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.racing-form label {
+  color: var(--soft-gray);
+  font-weight: 500;
+}
+
+.racing-form input[type="text"],
+.racing-form input[type="email"],
+.racing-form select {
+  border-color: rgba(110,15,18,0.3);
+  background: rgba(255,255,255,0.02);
+}
+
+.racing-form input[type="text"]:focus,
+.racing-form input[type="email"]:focus,
+.racing-form select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(110,15,18,0.3);
+}
+
+/* Racing modal */
+.racing-modal {
+  position: relative;
+}
+
+.modal-racing-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-racing-header .racing-stripe {
+  flex: 1;
+  height: 2px;
+}
+
+.modal-racing-header .racing-title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.modal-racing-header .title-number {
+  font-size: 1.2rem;
+}
+
+/* Racing socials */
+.racing-socials {
+  margin: 3rem 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(110,15,18,0.2);
+}
+
+.racing-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.racing-social-link .btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.racing-social-link:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Hero microcopy */
+.microcopy {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Enhanced card styling for index */
+.racing-cards-grid .racing-card h4 {
+  margin-top: 0.5rem;
+}
 
 /* ---------------------- Responsiveness ---------------------- */
 @media (max-width: 1024px) { .cards { grid-template-columns: repeat(2,1fr); } }

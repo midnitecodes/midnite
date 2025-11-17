@@ -5,59 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The App – Midnite Auto</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="page reveal container">
-    <h2>The App</h2>
-    <p>
-      The Midnite app is the social pit lane for drivers who want more than a feed. It helps you
-      find trusted parts, log real work on your builds, host and attend local meets, and
-      connect with people who will actually help you finish the job.
-    </p>
+  <!-- Racing-themed background elements -->
+  <div class="racing-bg">
+    <div class="speed-lines">
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+    </div>
+    <div class="checkered-pattern"></div>
+    <div class="racing-grid"></div>
+  </div>
 
-    <div class="cards">
-      <article class="card">
-        <h4>Problem — You’re lost in noise</h4>
+  <section class="page reveal container racing-page">
+    <div class="racing-header">
+      <div class="racing-stripe"></div>
+      <h2 class="racing-title">
+        <span class="title-number">02</span>
+        <span class="title-text">The App</span>
+      </h2>
+      <div class="racing-stripe"></div>
+    </div>
+
+    <div class="racing-intro">
+      <p>
+        The Midnite app is the social pit lane for drivers who want more than a feed. It helps you
+        find trusted parts, log real work on your builds, host and attend local meets, and
+        connect with people who will actually help you finish the job.
+      </p>
+    </div>
+
+    <div class="racing-cards-grid">
+      <article class="racing-card">
+        <div class="card-icon">⚠️</div>
+        <h4>Problem — You're lost in noise</h4>
         <p>Scrolling endless posts and sellers with no trust — parts break, builds stall, and
           you waste time and money chasing bad advice.</p>
       </article>
 
-      <article class="card">
+      <article class="racing-card">
+        <div class="card-icon">🎯</div>
         <h4>Where you want to be</h4>
         <p>Know exactly where to buy trusted parts, document your progress, and meet people who
           can help you finish your build — quickly and safely.</p>
       </article>
 
-      <article class="card">
+      <article class="racing-card highlight-card">
+        <div class="card-icon">⚡</div>
         <h4>How Midnite solves it</h4>
         <p>Verified community listings, garage logs to track maintenance and upgrades, event tools
           to organize meets, and social features that reward trusted contributors.</p>
       </article>
 
-      <article class="card">
+      <article class="racing-card">
+        <div class="card-icon">🛡️</div>
         <h4>Marketplace & Trust</h4>
         <p>A private marketplace focused on seller reputation, escrow-friendly swaps, and
-          community-verified listings so you’ll buy with confidence.</p>
+          community-verified listings so you'll buy with confidence.</p>
       </article>
     </div>
 
-    <p style="margin-top:1.4rem;"><em>Available soon on App Store & Google Play — join the beta to claim your OG badge.</em></p>
+    <div class="racing-badge">
+      <p><em>Available soon on App Store & Google Play — join the beta to claim your OG badge.</em></p>
+    </div>
 
-    <section style="margin-top:2rem;">
-      <h3>Feature details</h3>
-      <p>Below are small examples of how each part of the app helps you get real work done, not just likes.</p>
-      <h4>Feed & Stories</h4>
-      <p>Showcase step-by-step builds with timestamps, parts lists, and annotations so others can reproduce or help. Save posts to private collections for future reference.</p>
-      <h4>Garage Logs</h4>
-      <p>Track every repair and upgrade — capture costs, odometer, photos, and receipts. Export logs for resale transparency or warranty claims.</p>
-      <h4>Events & Meets</h4>
-      <p>Create private or public meet pages with RSVP limits, safety notes, and in-app check-ins. Hold charity drives and offer reserved spots to OGs.</p>
-      <h4>Marketplace</h4>
-      <p>List parts with build history, seller reputation, and optional escrow handling. Buyers can filter by condition, location, and trusted sellers.</p>
+    <section class="racing-features">
+      <div class="racing-header">
+        <div class="racing-stripe"></div>
+        <h3 class="racing-title">
+          <span class="title-number">03</span>
+          <span class="title-text">Feature Details</span>
+        </h3>
+        <div class="racing-stripe"></div>
+      </div>
+      <p class="features-intro">Below are small examples of how each part of the app helps you get real work done, not just likes.</p>
+      
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-number">01</div>
+          <div class="feature-content">
+            <h4>Feed & Stories</h4>
+            <p>Showcase step-by-step builds with timestamps, parts lists, and annotations so others can reproduce or help. Save posts to private collections for future reference.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-number">02</div>
+          <div class="feature-content">
+            <h4>Garage Logs</h4>
+            <p>Track every repair and upgrade — capture costs, odometer, photos, and receipts. Export logs for resale transparency or warranty claims.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-number">03</div>
+          <div class="feature-content">
+            <h4>Events & Meets</h4>
+            <p>Create private or public meet pages with RSVP limits, safety notes, and in-app check-ins. Hold charity drives and offer reserved spots to OGs.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-number">04</div>
+          <div class="feature-content">
+            <h4>Marketplace</h4>
+            <p>List parts with build history, seller reputation, and optional escrow handling. Buyers can filter by condition, location, and trusted sellers.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="buttons" style="margin-top:1.6rem;">
-      <a href="#" class="btn open-modal">Join Early Access</a>
+    <div class="buttons racing-buttons">
+      <a href="#" class="btn racing-btn open-modal">
+        <span>Join Early Access</span>
+        <span class="btn-arrow">→</span>
+      </a>
     </div>
   </section>
 
